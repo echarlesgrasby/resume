@@ -1,0 +1,450 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Eric Charles Grasby, MSIQ},
+    pdfauthor={Eric Charles Grasby},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{20 pt}{20 pt}\selectfont \MakeUppercase{Eric Charles Grasby}
+
+        \vspace{5 pt}
+
+        \normalsize
+        \mbox{Little Rock, Arkansas}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:ericcgrasby@gmail.com}{ericcgrasby@gmail.com}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+501-837-9144}{501-837-9144}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/echarlesgrasby}{linkedin.com/in/echarlesgrasby}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/echarlesgrasby}{github.com/echarlesgrasby}}%
+    \end{header}
+
+    \vspace{5 pt - 0.3 cm}
+
+
+    \section{Profile}
+
+
+
+        
+        \begin{onecolentry}
+            I am a team-oriented developer and data engineer with over 10 years of experience across several industries and problem domains. My programming expertise ranges across multiple layers of the modern application stack, including back-end development, UI development, cloud infrastructure (AWS), and custom data processing code. Currently pursuing my Ph.D. in Computer and Information Science. 
+            
+            \vspace{0.2 cm}
+            
+            \textit{I am currently based in Little Rock, AR, but I am very open both to remote work opportunities and relocation.}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+    
+   % \section{Quick Guide}
+%
+   % \begin{onecolentry}
+   %     \begin{highlightsforbulletentries}
+%
+%
+   %     \item Each section title is arbitrary and each section contains a list of entries.
+%
+   %     \item There are 7 unique entry types: \textit{BulletEntry}, \textit{TextEntry}, \textit{EducationEntry}, \textit{ExperienceEntry}, \textit{NormalEntry}, \textit{PublicationEntry}, and \textit{OneLineEntry}.
+%
+   %     \item Select a section title, pick an entry type, and start writing your section!
+%
+   %     \item \href{https://docs.rendercv.com/user_guide/}{Here}, you can find a comprehensive user guide for RenderCV.
+%
+%
+   %     \end{highlightsforbulletentries}
+   % \end{onecolentry}
+
+        \section{Technologies}
+
+        \begin{threecolentry}{
+            \begin{itemize}
+                \item Java, Scala, Python, C\#, Golang
+                \item SQL (T-SQL, PL/SQL)
+                \item Linux Shell (bash/sh/ksh), PowerShell
+                \item Hashicorp Terraform
+            \end{itemize}
+        }{ %% Frameworks
+            \begin{itemize}
+                \item Spring Framework (Spring Boot), Vert.X
+                \item React.js, Vue.js
+                \item Kubernetes (AKS)
+                \item Git, Bitbucket
+            \end{itemize}
+        } 
+
+        %% General Technologies
+        \begin{itemize}
+            \item Microsoft SQL Server
+            \item Netezza
+            \item AWS Redshift
+            \item AWS RDS MySQL
+            \item Apache Spark
+        \end{itemize}
+        \end{threecolentry}
+        
+    \section{Experience}
+    
+        \begin{twocolentry}{
+            May 2020 – Present
+        }
+            \textbf{Senior Programmer/Developer}, Southwest Power Pool (SPP) -- Little Rock, AR \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Worked as a rotational developer across several cross-functional teams within SPP's IT organization, including: engineering application development, site reliability support, and our organization's energy market monitoring (MMU) unit.
+                \item Led the development of the Engineering Platform project at SPP, a Kubernetes-based web application that spawns user-defined processes to run on the Argo Workflows platform (hosted at SPP). This granted our engineering division (90+ electrical engineers) the ability to develop custom workflows to process electrical engineering studies.
+                \item Led the effort to develop a comprehensive user manual to document the features and functionality of the application.
+                \item Designed, developed, deployed, and supported web applications in React.js and Java/Spring Boot to process engineering study data for SPP's engineering planning organization.
+                \item Developed and supported ETL processing (Informatica \& SAS) for loading real-time energy data to various operational databases.
+                \item Developed and supported SAS programs used in energy market surveillance and analytics across a large base of energy market participants.
+                \item Supported a highly-available and distributed process historian system across a fleet of enterprise servers.
+                \item Participated in 24x7 on-call duties, as assigned.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.75 cm}
+
+        \begin{twocolentry}{
+            June 2021 – December 2021
+        }
+        \textbf{DevOps Engineer}, First Orion Corporation -- North Little Rock, AR \end{twocolentry}
+
+        \vspace{0.10 cm}
+        
+        \begin{onecolentry}
+            \begin{highlights}
+            \item Worked with a team of DevOps Engineers to manage an infrastructural codebase for the AWS platform using Hashicorp Terraform (HCL).
+            \item Developed and deployed data processing flows using Scala and Apache Spark that supported a high-volume scam call detection framework.
+            \item Refactored existing Kubernetes Helm charts into Terraform to streamline deployments for an API gateway.
+            \item Participated in providing support for a Tier-2 on-call rotation for Data Operations.
+            \item Documented troubleshooting procedures and the onboarding process (for new developers).
+            \item Pulled the team together, on several occasions, onto troubleshooting bridge calls to resolve platform issues (outages, job failures, etc.)
+            \item Worked, in response to an enterprise client request, to develop operational run-books for First Orion’s data products.
+            \item Assisted with efforts to enable First Orion to acquire their corporate ISO certification in Q4 2021
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.75 cm}
+        \begin{twocolentry}{
+            June 2017 - May 2020
+        }
+            \textbf{Database Developer / Analyst}, Merkle Inc. -- Little Rock, AR\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Worked as an individual contributor on a development team that maintained both a large foundational marketing platform and a web-services solution for a Fortune 500 financial company.
+                \item Co-developed a data warehousing process in SQL Server to consolidate and match 0.5 billion back-logged mailing records against a Merkle product database.
+                \item Developed and maintained custom ETL solutions to facilitate the processing of client mailing campaigns that constituted millions of production records per week.
+                \item Performed client-facing responsibilities (requirements modeling) to support customer feature requests.
+                \item Participated in 24x7 on-call duties, as assigned.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.75 cm}
+
+        \begin{twocolentry}{
+            Sept. 2015 - May 2017
+        }
+            \textbf{Due Diligence Analyst / Intern}, Fund For Arkansas' Future, LLC -- Little Rock, AR\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item During my undergraduate degree, I worked as an analyst intern for the Executive Director of a venture capital (angel investor) fund.
+                \item Performed due diligence on prospective investments into early stage, technology-focused, startup companies that based themselves in the State of Arkansas.
+            \end{highlights}
+        \end{onecolentry}
+
+    \vspace{0.2 cm}
+    
+        \section{Education}
+        \begin{samepage}
+        \begin{twocolentry}{
+            \href{https://ualr.edu/informationscience} ualr.edu/informationscience 
+        }
+            \textbf{University of Arkansas at Little Rock (UALR)}
+        \end{twocolentry}
+             
+        
+        \vspace{0.25cm}
+
+        \begin{twocolentry}{
+            Aug 2024 - Present
+        }
+            Doctor of Philosophy (Ph.D.), Computer and Information Sciences
+        \end{twocolentry}
+        
+        \begin{twocolentry}{
+            Aug 2017 - May 2020
+        }
+            Masters of Science, Information Quality
+        \end{twocolentry}
+
+        \begin{twocolentry}{
+            Aug 2014 - May 2018
+        }
+            Bachelor of Science, Information Science
+        \end{twocolentry}
+        
+        \vspace{0.5 cm}
+        
+            \begin{onecolentry}
+                \textbf{A System to Support Monitoring and Surveillance Operations Within a Wholesale Electrcity Market}
+            \end{onecolentry}
+%
+            \vspace{0.10 cm}
+            
+        \begin{onecolentry}
+            %\mbox{Eric C. Grasby}%, \mbox{\textbf{\textit{John Doe}}}, \mbox{Samwise Gamgee}
+
+                \vspace{0.10 cm}
+                
+    %    \href{https://doi.org/10.1109/TASC.2023.3340648}{10.1109/TASC.2023.3340648}
+         This is my dissertation that is currently still under development. It is expected to be finalized in 2026.
+         \newline
+         \url{https://github.com/echarlesgrasby/dissertation}
+        \end{onecolentry}
+    \end{samepage}
+
+    \vspace{0.2 cm}
+
+        %\vspace{0.2 cm}
+
+       % \begin{twocolentry}{
+       %     \href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}
+       % }
+       %     \textbf{Synchronized Desktop Calendar}\end{twocolentry}
+%
+       % \vspace{0.10 cm}
+       % \begin{onecolentry}
+       %     \begin{highlights}
+       %         \item Developed a desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users
+       %         \item Tools Used: C\#, .NET, SQL, XML
+       %     \end{highlights}
+       % \end{onecolentry}
+%
+%
+       % \vspace{0.2 cm}
+%
+       % \begin{twocolentry}{
+       %     2002
+       % }
+       %     \textbf{Custom Operating System}\end{twocolentry}
+%
+       % \vspace{0.10 cm}
+       % \begin{onecolentry}
+       %     \begin{highlights}
+       %         \item Built a UNIX-style OS with a scheduler, file system, text editor, and calculator
+       %         \item Tools Used: C
+       %     \end{highlights}
+       % \end{onecolentry}
+
+
+\vspace{0.2 cm}
+        %\section{Technologies}
+        %\begin{onecolentry}
+        %    \textbf{Languages:} Java, C\#, Scala, Python, SQL (T-SQL, PL/SQL), SAS, PowerShell, Linux Shell (bash/sh/ksh), Golang, Hashicorp Terraform, \LaTeX
+        %\end{onecolentry}
+%
+        %\vspace{0.2 cm}
+        %
+        %\begin{onecolentry}
+        %    \textbf{Frameworks:} Spring Framework, React.js, Vue.js, Vert.X, Data Analysis (Pandas, Matplotlib, Seaborn), FastAPI (Python), Apache Spark
+        %\end{onecolentry}
+%
+        %\vspace{0.2 cm}
+%
+        %\begin{onecolentry}
+        %    \textbf{Database Systems:} Microsoft SQL Server, Netezza, Oracle, Amazon Redshift
+        %\end{onecolentry}
+        %
+        %\vspace{0.2 cm}
+%
+        %\begin{onecolentry}
+        %    \textbf{Compute Platforms:} Amazon Web Services (AWS), Argo / Argo Workflows, Kubernetes (Rancher, AKS), On-Premise Infrastructure Support, Ab Initio ETL
+        %\end{onecolentry}
+%
+        %\vspace{0.2 cm}
+%
+        %\begin{onecolentry}
+        %    \textbf{Misc. Toolsets:} Jetbrains Product Suite (IntelliJ, GoLand, WebStorm, DataGrip), Atlassian Products (Bitbucket, Jira, Confluence), Git, Jenkins, Docker/Docker Compose, Linux core utilities, Tableau, SQL Server Integration Services, Nginx, Apache Web Server, Tomcat, Postman
+        %\end{onecolentry}
+    
+
+    \section{Accolades}
+
+        \begin{twocolentry}{
+            2009
+        }
+            Eagle Scout, BSA Troop 770
+        \end{twocolentry}
+    
+\end{document}

@@ -2,6 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
-  width: 50%;
+  margin-left: auto;
+  margin-left: auto;
+  clear: both;
+}
+
+#me-intro > figure > img {
+  width: 20%;
+  border-style: 2px solid black;
 }

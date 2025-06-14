@@ -1,13 +1,1 @@
-#me-intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-left: auto;
-  clear: both;
-}
 
-#me-intro > figure {
-  width: 20%;
-  border-style: 2px solid black;
-}

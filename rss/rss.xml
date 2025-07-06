@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" />
   <channel>
     <title>Eric Charles Grasby</title>
     <link>https://ericgrasby.xyz</link>
@@ -13,6 +13,7 @@
       <description>Stop letting your junk pile up! I talk about a purchase that I made at Goodwill and how I gave it new life.</description>
       <pubDate>Thu, 12 Jun 2025 14:30:00 -0500</pubDate>
       <guid>https://ericgrasby.xyz/blogposts/Repairing%20Stuff%20Instead%20of%20Buying%20New.pdf</guid>
+      <media:thumbnail url="https://github.com/echarlesgrasby/resume/blob/master/pix/me.jpg" />
     </item>
   </channel>
 </rss>

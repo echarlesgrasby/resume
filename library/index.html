@@ -57,31 +57,26 @@
       font-size: 1rem;
       border-radius: 0 0 8px 8px;
     }
-    .image-hover-container {
+    .text-hover-container {
       position: relative;
       display: inline-block;
-      margin: 2rem;
-    }
-
-    .thumbnail {
-      width: 200px; /* Set the thumbnail size */
-      border-radius: 6px;
+      font-weight: bold;
+      color: #0077cc;
       cursor: pointer;
     }
-
     .popup-image {
       display: none;
       position: absolute;
-      top: 0;
-      left: 105%; /* Push the popup to the right of the thumbnail */
-      z-index: 10;
+      top: 100%;
+      left: 0;
+      margin-top: 0.5rem;
       max-width: 400px;
       border: 2px solid #ccc;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      z-index: 10;
     }
-
-    .image-hover-container:hover .popup-image {
+    .text-hover-container:hover .popup-image {
       display: block;
     }
 </style>

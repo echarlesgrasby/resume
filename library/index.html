@@ -5,26 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="/css/default_style.css" />
   <title>My Personal Library</title>
-  <!-- 
-  <style>   
-	body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-	h1 {
-		text-align: center;
-	}
-	section > h2, h3, ul, li{
-		text-align: center;
-	}
-	section > ul > li {
-		list-style-type: none;
-	}
-	
-  </style>
-  -->
   <style>
   .note-box {
     background-color: #e6f4ff;
@@ -44,6 +24,66 @@
     margin-bottom: 0.5rem;
     font-weight: 600;
   }
+
+ .figure-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem auto;
+      max-width: 90%;
+    }
+
+    .figure-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 600px; /* Adjust to your desired max size */
+    }
+
+    .figure-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      font-size: 1rem;
+      border-radius: 0 0 8px 8px;
+    }
+    .image-hover-container {
+      position: relative;
+      display: inline-block;
+      margin: 2rem;
+    }
+
+    .thumbnail {
+      width: 200px; /* Set the thumbnail size */
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .popup-image {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 105%; /* Push the popup to the right of the thumbnail */
+      z-index: 10;
+      max-width: 400px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    }
+
+    .image-hover-container:hover .popup-image {
+      display: block;
+    }
 </style>
 </head>
 <body>
@@ -71,7 +111,12 @@
 		The second coolest was the Dickson Street Book Shop near the University of Arkansas' campus in Fayetteville, AR.
 		One of the bookshops near Harvard was pretty cool too. I can't recall what the name was, but it was probably like "The Harvard Bookstore" (or some other equally uninspired name).
 	</p>
-	<span style="text-align: center;"><img src="/pix/powells-1.png" alt="structural pillar at Powell's Books in Portland, Oregon. Reserved for visiting authors to sign"/></span>
+	<div class="figure-container">
+		<div class="figure-wrapper">
+			<img src="/pix/powells-1.png" alt="structural pillar at Powell's Books in Portland, Oregon. Reserved for visiting authors to sign"/>
+			<div class="caption">This is a structural pillar at Powell's Books. It is reserved for visiting author's to sign (note Robert Jordan and Brandon Sanderson)</div>
+		</div>
+	</div>
 	<p>
 		I don't like Barnes and Noble for 2 reasons: 
 		<ol>
@@ -105,16 +150,17 @@
 	<h3>Science Fiction</h3>
 	<ul>
 		<li><i>Rendezvous With Rama</i> - Arthur C. Clarke &#128241; &nbsp; &raquo; &nbsp; <i> I have listened to this as an audiobook while I was falling asleep. I contend that it was responsible for giving me very weird dreams.</i></li>
-		<li><i>A World Out of Time</i> - Larry Niven &#128214;&#128241; &nbsp; &raquo; &nbsp; My copy was signed by Larry!</li>
+		<li><i>A World Out of Time</i> - Larry Niven &#128214;&#128241; &nbsp; &raquo; &nbsp; <span class="text-hover-container">My copy was signed by Larry! <img src="/pix/woot-signed.png" alt="World out of Time - Signed by Larry Niven" class="popup-image"/></span></li>
 		<li><i>The Integral Trees</i> - Larry Niven &#128214;</li>
 		<li><i>Ringworld</i> - Larry Niven &#128241;</li>
-		<li><i>Babel-17</i> - Samuel R. Delaney &#128241;</li>
+		<li><i>Babel-17</i> - Samuel R. Delany &#128241;</li>
 		<li><i>Stranger In a Strange Land</i> - Robert A. Heinlein</li>
 		<li><i>I Will Fear No Evil</i> - Robert A. Heinlein &#128241;</li>
 		<li><i>The Cat Who Could Walk Through Walls</i> - Robert A. Heinlein</li>
 		<li><i>Time Enough for Love</i> - Robert A. Heinlein</li>
 		<li><i>Traitor's Sun</i> - Marion Zimmer Bradley</li>
 		<li><i>Oath of the Renunciates</i> - Marion Zimmer Bradley</li>
+		<li><i>Make Room! Make Room!</i> - Harry Harrison &#128214; &#128241;</li>
 	</ul>
 </section>
 
@@ -127,6 +173,7 @@
 		<li><i>Matters of Life and Data</i> - Charles D. Morgan &#128241; &nbsp; &raquo; &nbsp; I actually worked for this guy's (second) company for a little while.</li>
 		<li><i>The Human Race to the Future (What Can Happen and What To Do)</i> - Dr. J. Daniel Berleant; &nbsp; &raquo; &nbsp; - He was one of my professors in college.</li>
 		<li><i>The Chemicals of Life</i> - Isaac Asimov </li>
+		<li><i>Bad Blood</i> - John Carreyrou &#128241; &#128214; &nbsp; &raquo; &nbsp; - This was the reporter that made the general public aware of the <em>Theranos</em> story in the New York Times. Great read.</li>
 	</ul>
 
   <h3>Linguistics</h3>

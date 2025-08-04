@@ -8,6 +8,14 @@
     <lastBuildDate>Mon, 14 Jul 2025 12:00:00 -0500</lastBuildDate>
 
     <item>
+      <title>August 04, 2025 Library Update!</title>
+      <link>https://ericgrasby.xyz/library/index.html</link>
+      <description>Added more books to my inventory list!</description>
+      <pubDate>Mon, 04 Aug 2025 14:19:00 -0500</pubDate>
+      <guid>https://ericgrasby.xyz/library/index.html.2</guid>
+      <media:thumbnail url="https://github.com/echarlesgrasby/resume/blob/master/pix/me.jpg" />
+    </item>
+    <item>
       <title>Debugging via Differential Diagnosis</title>
       <link>https://ericgrasby.xyz/blogposts/Debugging%20Via%20Differential%20Diagnosis.pdf</link>
       <description>A take that I have on how to approach debugging</description>
@@ -33,3 +41,4 @@
     </item>
   </channel>
 </rss>
+

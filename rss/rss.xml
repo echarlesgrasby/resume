@@ -5,8 +5,16 @@
     <link>https://ericgrasby.xyz</link>
     <description>All my blog posts</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Aug 2025 14:19:00 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 09 Aug 2025 14:19:00 -0500</lastBuildDate>
 
+    <item>
+      <title>I Conducted a Delphi Study (and you should, too!)</title>
+      <link>https://ericgrasby.xyz/blogposts/introductory-delphi-technique.pdf</link>
+      <description>I'd like to tell you about a research method known as "The Delphi Method", and why I think that you should conduct one.</description>
+      <pubDate>Sat, 09 Aug 2025 14:30:00 -0500</pubDate>
+      <guid>https://ericgrasby.xyz/blogposts/introductory-delphi-technique.pdf</guid>
+      <media:thumbnail url="https://github.com/echarlesgrasby/resume/blob/master/pix/me.jpg" />
+    </item>
     <item>
       <title>August 04, 2025 Library Update!</title>
       <link>https://ericgrasby.xyz/library/index.html</link>
@@ -41,5 +49,6 @@
     </item>
   </channel>
 </rss>
+
 
 

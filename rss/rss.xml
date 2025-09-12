@@ -5,8 +5,16 @@
     <link>https://ericgrasby.xyz</link>
     <description>All my blog posts</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Aug 2025 14:19:00 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 12 Sep 2025 11:28:00 -0500</lastBuildDate>
 
+    <item>
+      <title>New Gallery Page for Pictures That I Took at Conferences in 2025</title>
+      <link>https://ericgrasby.xyz/2025-conference-gallery/</link>
+      <description>I'm still adding some content to this page, but this is a glimpse into my professional travels of 2025.</description>
+      <pubDate>Fri, 12 Sep 2025 11:27:00 -0500</pubDate>
+      <guid>https://ericgrasby.xyz/2025-conference-gallery/-1</guid>
+      <media:thumbnail url="https://github.com/echarlesgrasby/resume/blob/master/pix/me.jpg" />
+    </item>
     <item>
       <title>I Conducted a Delphi Study (and you should, too!)</title>
       <link>https://ericgrasby.xyz/blogposts/introductory-delphi-technique.pdf</link>
@@ -49,6 +57,7 @@
     </item>
   </channel>
 </rss>
+
 
 
 

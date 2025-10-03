@@ -5,8 +5,16 @@
     <link>https://ericgrasby.xyz</link>
     <description>All my blog posts</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Sep 2025 11:28:00 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 3 Oct 2025 16:14:00 -0500</lastBuildDate>
 
+    <item>
+      <title>I Completed My Dissertation Proposal Defense</title>
+      <link>https://ericgrasby.xyz/blogposts/completed_my_proposal_defense.pdf</link>
+      <description>The title says it all!</description>
+      <pubDate>Fri, 12 Sep 2025 11:27:00 -0500</pubDate>
+      <guid>https://ericgrasby.xyz/blogposts/completed_my_proposal_defense.pdf-1</guid>
+      <media:thumbnail url="https://github.com/echarlesgrasby/resume/blob/master/pix/me.jpg" />
+    </item>
     <item>
       <title>New Gallery Page for Pictures That I Took at Conferences in 2025</title>
       <link>https://ericgrasby.xyz/2025-conference-gallery/</link>
@@ -57,6 +65,7 @@
     </item>
   </channel>
 </rss>
+
 
 
 

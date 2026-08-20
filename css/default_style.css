@@ -41,3 +41,28 @@
       margin-top: 2rem;
       margin-bottom: 2rem;
     }
+	
+	.photo-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+	.photo-row figure {
+		flex: 1 1 300px;   /* grow/shrink, but don't go below ~300px before wrapping */
+		max-width: 45%;
+		margin: 0;
+	}
+	.photo-row img {
+		width: 100%;        /* fill the figure instead of a fixed 40% of body */
+		height: auto;
+		display: block;
+	}
+
+	@media (max-width: 600px) {
+		.photo-row figure {
+		max-width: 100%;
+	}
+	}

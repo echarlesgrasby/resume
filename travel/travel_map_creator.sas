@@ -11,7 +11,15 @@ data work.excursions;
 datalines;
 Dallas,TX,Personal
 Dallas,TX,Work
+Denver,CO,Personal
+Cimmaron,NM,Personal
+Chicago,IL,Personal
+Navarre,FL,Personal
+Memphis,TN,Personal
+Paducah,KY,Personal
 Los Angeles,CA,Work
+Little Rock,AR,Personal
+Cheyenne,WY,Personal
 Portland,OR,Personal
 Las Vegas,NV,Work
 New Haven,CT,Work

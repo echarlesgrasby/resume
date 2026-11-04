@@ -12,13 +12,17 @@ datalines;
 Dallas,TX,Personal
 Dallas,TX,Work
 Denver,CO,Personal
-Cimmaron,NM,Personal
+Cimarron,NM,Personal
 Chicago,IL,Personal
 Navarre,FL,Personal
 Memphis,TN,Personal
 Paducah,KY,Personal
 Los Angeles,CA,Work
 Little Rock,AR,Personal
+New Orleans,LA,Personal
+Anderson,SC,Personal
+Lansing,MI,Personal
+Sandusky,OH,Personal
 Cheyenne,WY,Personal
 Portland,OR,Personal
 Las Vegas,NV,Work

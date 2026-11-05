@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/css/default_style.css" />
+  <title>My Personal Library</title>
+  <style>
+  .note-box {
+    background-color: #e6f4ff;
+    border-left: 5px solid #2b80ff;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 1rem;
+    color: #003366;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .note-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+ .figure-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem auto;
+      max-width: 90%;
+    }
+
+    .figure-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 600px; /* Adjust to your desired max size */
+    }
+
+    .figure-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      font-size: 1rem;
+      border-radius: 0 0 8px 8px;
+    }
+    .text-hover-container {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      color: #0077cc;
+      cursor: pointer;
+    }
+    .popup-image {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 0.5rem;
+      max-width: 400px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      z-index: 10;
+    }
+    .text-hover-container:hover .popup-image {
+      display: block;
+    }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Travel</h1>
+</header>
+
+
+<section>
+	<p> This is a map of the travel that I have done as an adult (mainly as a fun record for myself). This map is created from a SAS script that is shown at the bottom of the page.
+	</p>
+	<div class="figure-container">
+		<div class="figure-wrapper">
+			<img src="./ecg_travel_map_20261104.png" alt="All places that I have currently traveled to as an adult"/>
+		</div>
+	</div>
+</section>
+<section>
+  <div class="source-code-wrapper">
+    <div class="source-code-header">travel_map_creator.sas</div>
+    <pre class="source-code"><code id="github-code"></code></pre>
+</div>
+
+<script>
+fetch('https://raw.githubusercontent.com/echarlesgrasby/resume/refs/heads/master/travel/travel_map_creator.sas')
+    .then(r => r.text())
+    .then(text => {
+        document.getElementById('github-code').textContent = text;
+    });
+</script>
+</section>
+  <footer>
+    <hr />
+    <p>&copy; Eric Charles Grasby - 2025 | <a href="https://ericgrasby.xyz">Return Home</a></p>
+  </footer>
+</body>
+</html>
+
+
+
+

@@ -79,6 +79,10 @@
     .text-hover-container:hover .popup-image {
       display: block;
     }
+	a > img {
+		  transition: transform 0.2s ease, opacity 0.2s ease;
+  		  cursor: pointer;
+	}
 </style>
 </head>
 <body>
@@ -93,7 +97,9 @@
 	</p>
 	<div class="figure-container">
 		<div class="figure-wrapper">
-			<img src="./ecg_travel_map_20261104.png" alt="All places that I have currently traveled to as an adult"/>
+			<a href="./ecg_travel_map_20261104.png" target="_blank" rel="noopener noreferrer">
+				<img src="./ecg_travel_map_20261104.png" alt="All places that I have currently traveled to as an adult"/>
+			</a>
 		</div>
 	</div>
 </section>
